@@ -3,7 +3,28 @@
 <head>
 <title>RudderStack Demo</title>
 
-
+<!-- OneTrust Cookies Consent Notice start for nyagah.github.io -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="1cbc8914-126d-4f2e-aeda-b556fc8388b1" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { 
+if (window.OneTrust.IsAlertBoxClosed()) {
+    // Load the SDK
+    const writeKey = window.localStorage.getItem('RS_writeKey')
+    const dataPlane = window.localStorage.getItem('RS_dataplane')
+   
+    rudderanalytics.load(writeKey, dataPlane, {
+      cookieConsentManager: {
+        oneTrust: {
+          enabled: true
+        }
+      },
+      //other options
+    });
+  }
+}
+</script>
+<!-- OneTrust Cookies Consent Notice end for nyagah.github.io -->
+  
 <script>
 
   document.addEventListener('submit', (e) => { console.log('submit...') })
@@ -31,11 +52,8 @@
     }(method);
   }
 
-  // const writeKey = window.localStorage.getItem('RS_writeKey')
-  // const dataPlane = window.localStorage.getItem('RS_dataplane')
-  
-  const writeKey = "2H4QBRUV2PVrnBIOpyE2a7ftHp5"
-  const dataPlane = "https://rudderstaclqy.dataplane.rudderstack.com"
+  //const writeKey = window.localStorage.getItem('RS_writeKey')
+  //const dataPlane = window.localStorage.getItem('RS_dataplane')
 
     // todo: set from query params
     const qp = () => {
@@ -51,7 +69,7 @@
 
     const { rswk, rsdpurl } = qp()
 
-    rudderanalytics.load(writeKey, dataPlane);
+    //rudderanalytics.load(writeKey, dataPlane);
 
   var items = [];
 
