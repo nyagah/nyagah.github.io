@@ -7,20 +7,23 @@
 <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="1cbc8914-126d-4f2e-aeda-b556fc8388b1" ></script>
 <script type="text/javascript">
 function OptanonWrapper() { 
-if (window.OneTrust.IsAlertBoxClosed()) {
-    // Load the SDK
-    const writeKey = window.localStorage.getItem('RS_writeKey')
-    const dataPlane = window.localStorage.getItem('RS_dataplane')
+    
+  // Load SDK after the user provides the consent
+  if (window.OneTrust.IsAlertBoxClosed()) {
+      
+      const writeKey = window.localStorage.getItem('RS_writeKey')
+      const dataPlane = window.localStorage.getItem('RS_dataplane')
    
-    rudderanalytics.load(writeKey, dataPlane, {
-      cookieConsentManager: {
-        oneTrust: {
-          enabled: true
-        }
-      },
-      //other options
-    });
-  }
+       // Load SDK
+       rudderanalytics.load(writeKey, dataPlane, {
+         cookieConsentManager: {
+           oneTrust: {
+             enabled: true
+           }
+         },
+        //other options
+      });
+   }
 }
 </script>
 <!-- OneTrust Cookies Consent Notice end for nyagah.github.io -->
