@@ -8,7 +8,7 @@ function searchFunction(event) {
 event.preventDefault();
 const searchTerm = document.getElementById('search').value;
   
-fetch("https://serve-session-4ja5lxhd71t3usfuiqdgs83v5p.i.anyscaleuserdata.com/imagine?prompt=${city}&img_size=512")
+fetch("https://serve-session-4ja5lxhd71t3usfuiqdgs83v5p.i.anyscaleuserdata.com/imagine?prompt=${searchTerm}&img_size=512")
   .then(res=>{return res.blob()})
   .then(blob=>{
     var img = URL.createObjectURL(blob);
@@ -24,7 +24,6 @@ console.log('Search term:', searchTerm);
 body {
 font-family: Georgia, sans-serif;
 margin: 50px;
-background-color: #93CBDF;
 }
 h1 {
 color: #0B042E;
@@ -46,7 +45,6 @@ border-radius: 5px 0 0 5px;
 }
 button {
 padding: 8px 15px;
-color: #fff;
 border: none;
 border-radius: 0 5px 5px 0;
 cursor: pointer;
