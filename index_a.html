@@ -7,7 +7,15 @@
 function searchFunction(event) {
 event.preventDefault();
 const searchTerm = document.getElementById('search').value;
-// You can perform further actions with the search term, like sending it to a server or processing it locally.
+  
+fetch("https://serve-session-4ja5lxhd71t3usfuiqdgs83v5p.i.anyscaleuserdata.com/imagine?prompt=${city}&img_size=512")
+  .then(res=>{return res.blob()})
+  .then(blob=>{
+    var img = URL.createObjectURL(blob);
+    // Do whatever with the img
+    document.getElementById('image_1').setAttribute('src', img);
+  })
+  
 console.log('Search term:', searchTerm);
 }
 </script>
@@ -63,6 +71,6 @@ background-color: #658E5E ;
 <button type="submit">Search</button>
 </div>
 </form>
-<script src="script.js"></script>
+<div class="image_1"></div>
 </body>
 </html>
