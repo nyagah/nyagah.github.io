@@ -7,16 +7,10 @@
 function searchFunction(event) {
 event.preventDefault();
 const searchTerm = document.getElementById('search').value;
-  
-fetch(`https://serve-session-4ja5lxhd71t3usfuiqdgs83v5p.i.anyscaleuserdata.com/imagine?prompt=${searchTerm}&img_size=512`)
-  .then(res=>{return res.blob()})
-  .then(blob=>{
-    var img = URL.createObjectURL(blob);
-    // Do whatever with the img
-    document.getElementById('image_1').setAttribute('src', img);
-    // document.getElementById('image_1').setAttribute('crossOrigin', 'anonymous');
-  })
-  
+
+// Get the image element
+var image = document.getElementById("image_1");
+image.src = `https://serve-session-4ja5lxhd71t3usfuiqdgs83v5p.i.anyscaleuserdata.com/imagine?prompt=${searchTerm}&img_size=512`;  
 console.log('Search term:', searchTerm);
 }
 </script>
@@ -62,6 +56,6 @@ cursor: pointer;
 <button type="submit">Search</button>
 </div>
 </form>
-<div class="image_1"></div>
+<img id="image_1" src=""/>
 </body>
 </html>
