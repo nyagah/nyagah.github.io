@@ -9,13 +9,23 @@ event.preventDefault();
   
 const searchTerm = document.getElementById('search').value;
 const headers = { 'anyscale-token': 't6EvKBhmk97quDjOykZ_dktTBMnUE1S_vpsoGLeU8kY' };
-  
+
+searchTerm += " in summer style"
 fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm}&img_size=512`, { headers })
   .then(res=>{return res.blob()})
   .then(blob=>{
     var img = URL.createObjectURL(blob);
     // Do whatever with the img
     document.getElementById('image_1').setAttribute('src', img);
+  })
+
+  searchTerm += " in winter style"
+  fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm}&img_size=512`, { headers })
+  .then(res=>{return res.blob()})
+  .then(blob=>{
+    var img = URL.createObjectURL(blob);
+    // Do whatever with the img
+    document.getElementById('image_2').setAttribute('src', img);
   })
   
 console.log('Search term:', searchTerm);
@@ -66,6 +76,15 @@ background: dodgerblue;
 <button type="submit">Search</button>
 </div>
 </form>
-<img id="image_1" src=""/>
+<table><
+         <tr>
+            <td><img id="image_1" src=""/></td>
+            <td><img id="image_2" src=""/></td> 
+         </tr>
+         <tr>
+           <td>Summer Style</td> 
+           <td>Winter Style</td> 
+         </tr> 
+</table>
 </body>
 </html>
