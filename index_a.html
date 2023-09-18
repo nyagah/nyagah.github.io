@@ -73,24 +73,25 @@ background: dodgerblue;
 </head>
 <body>
 <h1>Anyscale Stable Diffusion Demo</h1>
-<div>
-<form onsubmit="searchFunction(event)">
-<div class="search-container">
-<input type="text" id="search" name="q" placeholder="Test">
-<button type="submit">Search</button>
-</div>
-</form>
-</div>
-<div>
 <table>
-         <tr>
-            <td><img id="image_1" src=""/></td>
-            <td><img id="image_2" src=""/></td> 
-         </tr>
-         <tr>
-           <td>Summer Style</td> 
-           <td>Winter Style</td> 
-         </tr> 
+  <tr>
+    <td>
+    <form onsubmit="searchFunction(event)">
+      <div class="search-container">
+        <input type="text" id="search" name="q" placeholder="Test">
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td><img id="image_1" src=""/></td>
+    <td><img id="image_2" src=""/></td>
+  </tr>
+  <tr>
+    <td>Summer Style</td> 
+    <td>Winter Style</td> 
+  </tr> 
 </table>
 </div>
 </body>
