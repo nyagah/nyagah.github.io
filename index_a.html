@@ -14,6 +14,7 @@ fetch(`https://serve-session-4ja5lxhd71t3usfuiqdgs83v5p.i.anyscaleuserdata.com/i
     var img = URL.createObjectURL(blob);
     // Do whatever with the img
     document.getElementById('image_1').setAttribute('src', img);
+    document.getElementById('image_1').setAttribute('crossOrigin', 'anonymous');
   })
   
 console.log('Search term:', searchTerm);
