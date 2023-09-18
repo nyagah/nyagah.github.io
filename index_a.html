@@ -7,11 +7,12 @@
 function searchFunction(event) {
 event.preventDefault();
   
-searchTerm = document.getElementById('search').value;
+const searchTerm = document.getElementById('search').value;
+const searchTerm_1 = searchTerm + " in summer style"
+const searchTerm_2 = searchTerm + " in winter style"
 const headers = { 'anyscale-token': 't6EvKBhmk97quDjOykZ_dktTBMnUE1S_vpsoGLeU8kY' };
 
-searchTerm += " in summer style"
-fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm}&img_size=512`, { headers })
+fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm_1}&img_size=512`, { headers })
   .then(res=>{return res.blob()})
   .then(blob=>{
     var img = URL.createObjectURL(blob);
@@ -19,8 +20,8 @@ fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm}
     document.getElementById('image_1').setAttribute('src', img);
   })
 
-  searchTerm += " in winter style"
-  fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm}&img_size=512`, { headers })
+  
+  fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm_2}&img_size=512`, { headers })
   .then(res=>{return res.blob()})
   .then(blob=>{
     var img = URL.createObjectURL(blob);
