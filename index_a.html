@@ -6,9 +6,11 @@
 <script>
 function searchFunction(event) {
 event.preventDefault();
+  
 const searchTerm = document.getElementById('search').value;
-
-fetch(`https://anyscale-demo.lmbae.com.global.prod.fastly.net/imagine?prompt=${searchTerm}&img_size=512`)
+const headers = { 'anyscale-token': 't6EvKBhmk97quDjOykZ_dktTBMnUE1S_vpsoGLeU8kY' };
+  
+fetch(`https://anyscale-demo.lmbae.com.global.prod.fastly.net/imagine?prompt=${searchTerm}&img_size=512`, { headers })
   .then(res=>{return res.blob()})
   .then(blob=>{
     var img = URL.createObjectURL(blob);
