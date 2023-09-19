@@ -10,7 +10,7 @@ event.preventDefault();
 const searchTerm = document.getElementById('search').value;
 const searchTerm_1 = searchTerm + " in summer style"
 const searchTerm_2 = searchTerm + " in winter style"
-const headers = { 'anyscale-token': 'CN6Ea_9Ue8CU3a0idlraY2EuloKQWvQveShqFw3YrDM' };
+const headers = { 'anyscale-token': 'LIKrZ9ZRoMkQErVYU7xI1-6Eqtc5Y_smWOoyjFKjMN4' };
 
 fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm_1}&img_size=512`, { headers })
   .then(res=>{return res.blob()})
