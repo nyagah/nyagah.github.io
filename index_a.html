@@ -10,7 +10,7 @@ event.preventDefault();
 const searchTerm = document.getElementById('search').value;
 const searchTerm_1 = searchTerm + " in a store shelve"
 const searchTerm_2 = searchTerm + " in a shopping basket"
-const headers = { 'anyscale-token': 'obHy8fZ9ByvYg2sIhjJatbMmqudUM5ND830bBbQHIQI' };
+const headers = { 'anyscale-token': 'LIKrZ9ZRoMkQErVYU7xI1-6Eqtc5Y_smWOoyjFKjMN4' };
 
 fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm_1}&img_size=512`, { headers })
   .then(res=>{return res.blob()})
