@@ -8,8 +8,8 @@ function searchFunction(event) {
 event.preventDefault();
   
 const searchTerm = document.getElementById('search').value;
-const searchTerm_1 = searchTerm + " in summer style"
-const searchTerm_2 = searchTerm + " in winter style"
+const searchTerm_1 = searchTerm + " in a store shelve"
+const searchTerm_2 = searchTerm + " in a shopping basket"
 const headers = { 'anyscale-token': 'obHy8fZ9ByvYg2sIhjJatbMmqudUM5ND830bBbQHIQI' };
 
 fetch(`https://anyscale-lewis.global.ssl.fastly.net/imagine?prompt=${searchTerm_1}&img_size=512`, { headers })
@@ -93,8 +93,8 @@ th, td {
     <td><img id="image_2" src=""/></td>
   </tr>
   <tr>
-    <td>Summer Style</td> 
-    <td>Winter Style</td> 
+    <td>Items on Shelves</td> 
+    <td>Items in a Basket</td> 
   </tr> 
 </table>
 </div>
